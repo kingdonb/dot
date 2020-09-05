@@ -1,1 +1,7 @@
 .vim/.netrwhist
+.bash_history
+.bashrc
+.kube/cache
+.kube/http-cache
+.viminfo
+gitops-hephy/
