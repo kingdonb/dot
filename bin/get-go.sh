@@ -16,3 +16,6 @@ mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
 #CMD ["make"]
 # source: https://stackoverflow.com/a/53405005/661659
+
+go get golang.org/dl/go1.15.1
+go1.15.1 download
