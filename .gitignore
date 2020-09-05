@@ -11,3 +11,4 @@
 .viminfo
 gitops-hephy/
 go/
+sdk/go1.15.1
