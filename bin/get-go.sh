@@ -22,4 +22,5 @@ go get golang.org/dl/go${version}
 go${version} download
 rm $HOME/sdk/go${version}/bin/go
 cd $HOME/sdk/go${version}/src
-./all.bash
+CGO_ENABLED=0 ./all.bash
+rm /go/bin/go$version
