@@ -23,4 +23,4 @@ go${version} download
 rm $HOME/sdk/go${version}/bin/go
 cd $HOME/sdk/go${version}/src
 CGO_ENABLED=0 ./all.bash
-rm /go/bin/go$version
+rm /$HOME/go/bin/go$version
