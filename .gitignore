@@ -6,6 +6,7 @@
 .kube/cache
 .kube/config
 .kube/http-cache
+.kube/kubectx
 .ssh/known_hosts
 .viminfo
 gitops-hephy/
