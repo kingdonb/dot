@@ -1,6 +1,8 @@
 .vim/.netrwhist
 .bash_history
 .bashrc
+.cache/go-build
+.config/htop/htoprc
 .kube/cache
 .kube/config
 .kube/http-cache
