@@ -2,6 +2,9 @@
 .bash_history
 .bashrc
 .kube/cache
+.kube/config
 .kube/http-cache
+.ssh/known_hosts
 .viminfo
 gitops-hephy/
+go/
