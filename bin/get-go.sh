@@ -1,9 +1,20 @@
 #!/usr/bin/env bash
 
-apk add --no-cache git make musl-dev go
+set -euo pipefail
+
+if test -f /etc/alpine-release ; then
+	apk add --no-cache git make musl-dev go
+fi
 
 # Configure Go
-export GOROOT=/usr/lib/go
+if test -d /usr/lib/golang ; then
+	export GOROOT=/usr/lib/golang
+elif test -d /usr/lib/go ; then
+	export GOROOT=/usr/lib/go
+else
+	echo "Install a golang package from your package manager first (exiting)"
+	exit 1
+fi
 export GOPATH=/go
 export PATH=/go/bin:$PATH
 
@@ -18,6 +29,10 @@ mkdir -p ${GOPATH}/src ${GOPATH}/bin
 # source: https://stackoverflow.com/a/53405005/661659
 
 version=1.15.1
+echo "Installing go $version (with CGO_ENABLED=0)"
+
+set -x
+
 go get golang.org/dl/go${version}
 go${version} download
 rm $HOME/sdk/go${version}/bin/go
