@@ -7,7 +7,9 @@ if test -f /etc/alpine-release ; then
 fi
 
 # Configure Go
-if test -d /usr/lib/golang ; then
+if test -d $HOME/sdk/go ; then
+	export GOROOT=$HOME/sdk/go
+elif test -d /usr/lib/golang ; then
 	export GOROOT=/usr/lib/golang
 elif test -d /usr/lib/go ; then
 	export GOROOT=/usr/lib/go
@@ -38,4 +40,5 @@ go${version} download
 rm $HOME/sdk/go${version}/bin/go
 cd $HOME/sdk/go${version}/src
 CGO_ENABLED=0 ./all.bash
-rm /$HOME/go/bin/go$version
+rm $HOME/go/bin/go$version
+ln -sf $HOME/sdk/go${version} $HOME/sdk/go
