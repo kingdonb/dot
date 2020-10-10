@@ -25,6 +25,8 @@ if test -f `which apk`; then
   alias ascp="apk add openssh-client"
 fi
 
+alias ls='ls -p'
+
 alias hephy="git clone https://github.com/kingdonb/gitops-hephy.git -b kingdonb"
 alias remem="git config credential.helper store"
 alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"

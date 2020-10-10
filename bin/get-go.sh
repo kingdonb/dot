@@ -7,12 +7,17 @@ if test -f /etc/alpine-release ; then
 fi
 
 # Configure Go
-if test -d $HOME/sdk/go ; then
+if [ -z "${GOROOT:-}" ]; then
+	# goroot is already set...
+	echo "GOROOT=$GOROOT"
+elif test -d $HOME/sdk/go ; then
 	export GOROOT=$HOME/sdk/go
 elif test -d /usr/lib/golang ; then
 	export GOROOT=/usr/lib/golang
 elif test -d /usr/lib/go ; then
 	export GOROOT=/usr/lib/go
+elif test -d /usr/local/go ; then
+	export GOROOT=/usr/local/go
 else
 	echo "Install a golang package from your package manager first (exiting)"
 	exit 1
