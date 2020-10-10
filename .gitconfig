@@ -1,6 +1,7 @@
 [user]
 	name = Kingdon Barrett
 	email = kingdon.b@nd.edu
+	signingkey = A82B102508836A5DF35711F52173964BF4EBB4D2
 [push]
 	default = simple
 [alias]
@@ -10,5 +11,7 @@
 	editor = /usr/bin/vim
 [pull]
 	ff = only
+[gpg]
+	program = gpg
 [init]
 	defaultBranch = kingdonb
