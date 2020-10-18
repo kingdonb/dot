@@ -31,8 +31,8 @@ if test -d /go || test -d /usr/local/go; then
     export PATH=$GOPATH/bin:$PATH
   fi
 fi
-if test -d $HOME/sdk/go1.15.2; then
-  export GOROOT=$HOME/sdk/go1.15.2
+if test -d $HOME/sdk/go1.15.3; then
+  export GOROOT=$HOME/sdk/go1.15.3
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
