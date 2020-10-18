@@ -9,6 +9,10 @@ if test -d $HOME/.local/bin; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if test -d $HOME/.arkade/bin/; then
+  export PATH=$PATH:$HOME/.arkade/bin/
+fi
+
 if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
