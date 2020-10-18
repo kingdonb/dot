@@ -7,9 +7,9 @@ if test -f /etc/alpine-release ; then
 fi
 
 # Configure Go
-if [ -z "${GOROOT:-}" ]; then
-	# goroot is already set...
-	echo "GOROOT=$GOROOT"
+if [ ! -z "${GOROOT:-}" ]; then
+  # goroot is already set...
+  echo "GOROOT=$GOROOT"
 elif test -d $HOME/sdk/go ; then
 	export GOROOT=$HOME/sdk/go
 elif test -d /usr/lib/golang ; then
