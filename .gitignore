@@ -41,6 +41,8 @@
 gitops-hephy/
 go/
 sdk/go1.15.1
+sdk/go1.15.2
+sdk/go1.15.3
 /.DS_Store
 /.CFUserTextEncoding
 /.oracle_jre_usage

@@ -1,6 +1,7 @@
 [user]
-  name = Kingdon Barrett
-  email = kingdon.b@nd.edu
+	name = Kingdon Barrett
+	email = yebyen@gmail.com #
+	signingkey = E16FBD7754D24B405D374A286AA04E0D72F42F47 #
 [push]
 	default = simple
 [alias]
@@ -12,3 +13,14 @@
 	ff = only
 [gpg]
 	program = gpg
+#[init]
+#	defaultBranch = main
+#[diff "sopsdiffer"]
+#       textconv = sops -d
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[merge]
+	ff = false
