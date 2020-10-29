@@ -13,5 +13,9 @@
 	ff = only
 [gpg]
 	program = gpg
-[init]
-	defaultBranch = kingdonb
+#[init]
+#	defaultBranch = main
+[diff "sopsdiffer"]
+	textconv = sops -d
+[merge]
+	ff = false
