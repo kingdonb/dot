@@ -17,7 +17,11 @@ if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
 
-if test -d /go || test -d /usr/local/go; then
+if test -d $HOME/go; then
+	export GOPATH=$HOME/go
+	export GOBIN=$HOME/go/bin
+	export PATH="$PATH:$HOME/go/bin"
+elif test -d /go || test -d /usr/local/go; then
   if test -d /go; then
     export GOPATH=/go
   elif test -d /usr/local/go; then
