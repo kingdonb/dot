@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+ROOT=/Users/kingdon
 
 set -euo pipefail
 
@@ -10,6 +11,8 @@ fi
 if [ ! -z "${GOROOT:-}" ]; then
   # goroot is already set...
   echo "GOROOT=$GOROOT"
+elif test -d /usr/local/opt/go/libexec ; then
+	export GOROOT=/usr/local/opt/go/libexec
 elif test -d $HOME/sdk/go ; then
 	export GOROOT=$HOME/sdk/go
 elif test -d /usr/lib/golang ; then
