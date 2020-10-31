@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+if test -d /Users/kingdon; then
 ROOT=/Users/kingdon
+elif
+ROOT=/
+fi
 
 set -euo pipefail
 
