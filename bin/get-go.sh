@@ -25,8 +25,10 @@ else
 	echo "Install a golang package from your package manager first (exiting)"
 	exit 1
 fi
-export GOPATH=/go
-export PATH=/go/bin:$PATH
+export GOPATH=$ROOT/go
+export PATH=$ROOT/go/bin:$PATH
+# export GOPATH=/Users/kingdon/go
+# export PATH=/Users/kingdon/go/bin:$PATH
 
 mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
