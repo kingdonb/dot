@@ -50,7 +50,7 @@ alias qgit='git'
 alias vi=vim
 alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
 
-if test -f `which apk`; then
+if test -f `which apk >/dev/null 2>&1`; then
   alias apks="apk add vim git-perl git-email fzf gcc g++ build-base"
   alias ascp="apk add openssh-client"
 fi
