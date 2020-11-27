@@ -69,6 +69,8 @@ fi
 
 export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphrase
 export EDITOR=vim
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export FLUX_FORWARD_NAMESPACE=flux
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
