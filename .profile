@@ -17,15 +17,18 @@ if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
 
+GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 if test -d $HOME/go; then
 	export GOPATH=$HOME/go
 	export GOBIN=$HOME/go/bin
 	export PATH="$PATH:$HOME/go/bin"
-elif test -d /go || test -d /usr/local/go; then
+elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
   if test -d /go; then
     export GOPATH=/go
   elif test -d /usr/local/go; then
     export GOPATH=/usr/local/go
+  elif test -d $GOCELLAR; then
+    export GOPATH=$GOCELLAR
   fi
   if test -d $HOME/go/bin; then
     export GOBIN=$HOME/go/bin
@@ -35,8 +38,8 @@ elif test -d /go || test -d /usr/local/go; then
     export PATH=$GOPATH/bin:$PATH
   fi
 fi
-if test -d $HOME/sdk/go1.15.3; then
-  export GOROOT=$HOME/sdk/go1.15.3
+if test -d $HOME/sdk/go1.15.5; then
+  export GOROOT=$HOME/sdk/go1.15.5
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
