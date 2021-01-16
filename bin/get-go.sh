@@ -51,7 +51,7 @@ mkdir -p ${GOPATH}/src ${GOPATH}/bin
 #CMD ["make"]
 # source: https://stackoverflow.com/a/53405005/661659
 
-version=1.15.5
+version=1.15.6
 echo "Installing go $version (with CGO_ENABLED=0)"
 
 set -x
