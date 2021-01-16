@@ -1,5 +1,5 @@
 KUBECTX=github.com/ahmetb/kubectx
-GOPATH=$HOME/go
+# GOPATH=$HOME/go
 
 go-get-binaries () {
 for i in build install
