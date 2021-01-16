@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
-if test -d /Users/kingdon; then
-ROOT=/Users/kingdon
-elif test -d /Users/kingdonb; then
-ROOT=/Users/kingdonb
-else
 ROOT=/
-fi
+# TODO: fixme for rootless mode
 
 set -euo pipefail
 
@@ -51,7 +46,7 @@ mkdir -p ${GOPATH}/src ${GOPATH}/bin
 #CMD ["make"]
 # source: https://stackoverflow.com/a/53405005/661659
 
-version=1.15.5
+version=1.15.7
 echo "Installing go $version (with CGO_ENABLED=0)"
 
 set -x

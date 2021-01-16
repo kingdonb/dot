@@ -1,5 +1,5 @@
 KUBECTX=github.com/ahmetb/kubectx
-GOPATH=$HOME/go
+# GOPATH=$HOME/go
 
 go-get-binaries () {
 for i in build install
@@ -12,8 +12,8 @@ do-gh-get-authtoken () {
 }
 
 alias be='bundle exec'
-alias k=kubectl
-alias ka='kubectl --namespace=argocd'
+# alias k=kubectl
+# alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
 alias kd='kubectl --namespace=dev'
 alias kf='kubectl --namespace=fluxcd'
@@ -36,9 +36,6 @@ alias chthc='cd ~/Desktop/hephy/teamhephy.com/charts'
 alias chn='cd ~/hephy/local/hephynator'
 alias chap='cd ~/projects/nd_api/rails-web-api'
 alias chrp='cd ~/projects/nd_api/nd_hrpy_api_internal'
-alias cpar='cd ~/prod/used/hephynator--first-guidance/app-repos'
-#alias cper='cd ~/projects/personal/empfin-request'
-alias cper='cd ~/projects/nd_api/nd-person-api-ws'
 alias cppm='cd ~/projects/personal/micro-swansons'
 alias cpg='cd ~/projects/personal/go'
 alias cww='cd ~/weaveworks/wks-quickstart-firekube'
@@ -51,7 +48,8 @@ alias kcm='kubectl --namespace=chart-museum'
 alias ksm='kubectl --namespace=cert-manager'
 alias ko='kubectl --namespace=commitsto'
 alias kob='kubectl --namespace=ob-mirror'
-alias kni='kubectl --namespace=nginx-ingress'
+# alias kni='kubectl --namespace=nginx-ingress'
+# alias kni='kubectl --namespace=ingress-nginx'
 alias ks='kubectl --namespace=kube-system'
 alias ksb='kubectl --namespace=simplest-commitbee'
 alias kh='kubectl --namespace=hephy'
@@ -59,6 +57,7 @@ alias kw='kubectl --namespace=weavek8sops'
 alias qgit='git'
 alias vi=vim
 alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+alias pod-reqs='kubectl get po -o custom-columns="Name:metadata.name,CPU-request:spec.containers[*].resources.requests.cpu"'
 
 # if test -f `which apk`; then
 #   alias apks="apk add vim git-perl git-email fzf gcc g++ build-base"

@@ -25,7 +25,6 @@
 /.viminfo
 .vim/.netrwhist
 .bash_history
-.bashrc
 /.cisco
 .cache/go-build
 .config/htop/htoprc

@@ -1,4 +1,4 @@
-source $HOME/.bash_aliases
+# source $HOME/.bash_aliases
 
 source $HOME/.bash_git
 GIT_PS1_SHOWUPSTREAM="verbose"
@@ -17,29 +17,39 @@ if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
 
-GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+### This section was intended to use the go sdk from homebrew first, if needed
+# GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+# if test -d $HOME/go; then
+# 	# GOPATH has been set in .bash_profile
+# 	# export GOPATH=$HOME/go
+# 	export GOBIN=$HOME/go/bin
+# 	export PATH="$PATH:$HOME/go/bin"
+# elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
+
 if test -d $HOME/go; then
-	export GOPATH=$HOME/go
+ 	# GOPATH has been set in .bash_profile
+ 	# export GOPATH=$HOME/go
 	export GOBIN=$HOME/go/bin
 	export PATH="$PATH:$HOME/go/bin"
-elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
-  if test -d /go; then
-    export GOPATH=/go
-  elif test -d /usr/local/go; then
-    export GOPATH=/usr/local/go
-  elif test -d $GOCELLAR; then
-    export GOPATH=$GOCELLAR
-  fi
-  if test -d $HOME/go/bin; then
-    export GOBIN=$HOME/go/bin
-    export PATH="$PATH:$HOME/go/bin"
-  fi
-  if test -d $GOPATH/bin; then
-    export PATH=$GOPATH/bin:$PATH
-  fi
+### for bootstrapping, we will use a go sdk from OS distro packages instead
+# elif test -d /go || test -d /usr/local/go; then
+#   if test -d /go; then
+#     export GOPATH=/go
+#   elif test -d /usr/local/go; then
+#     export GOPATH=/usr/local/go
+#   elif test -d $GOCELLAR; then
+#     export GOPATH=$GOCELLAR
+#   fi
+#   if test -d $HOME/go/bin; then
+#     export GOBIN=$HOME/go/bin
+#     export PATH="$PATH:$HOME/go/bin"
+#   fi
+#   if test -d $GOPATH/bin; then
+#     export PATH=$GOPATH/bin:$PATH
+#   fi
 fi
-if test -d $HOME/sdk/go1.15.5; then
-  export GOROOT=$HOME/sdk/go1.15.5
+if test -d $HOME/sdk/go1.15.7; then
+  export GOROOT=$HOME/sdk/go1.15.7
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
@@ -48,14 +58,14 @@ fi
 export CGO_ENABLED=0
 
 # Add asdf shell functions if asdf is installed (by homebrew)
-if test -f /usr/local/opt/asdf/asdf.sh; then
-  source /usr/local/opt/asdf/asdf.sh
-fi
+# if test -f /usr/local/opt/asdf/asdf.sh; then
+#   source /usr/local/opt/asdf/asdf.sh
+# fi
 
 # Add RVM to PATH for scripting
-if test -d "$HOME/.rvm/bin"; then
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
+# if test -d "$HOME/.rvm/bin"; then
+#   export PATH="$PATH:$HOME/.rvm/bin"
+# fi
 
 # Prepend cargo bin for 'just', other rust utilities, etc.
 if test -d "$HOME/.cargo/bin"; then
@@ -71,9 +81,8 @@ fi
 #
 
 export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphrase
-export EDITOR=vim
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export FLUX_FORWARD_NAMESPACE=flux
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
