@@ -1,4 +1,4 @@
-source $HOME/.bash_aliases
+# source $HOME/.bash_aliases
 
 source $HOME/.bash_git
 GIT_PS1_SHOWUPSTREAM="verbose"
