@@ -1,7 +1,7 @@
 [user]
 	name = Kingdon Barrett
-	email = yebyen@gmail.com
-	signingkey = E16FBD7754D24B405D374A286AA04E0D72F42F47
+	email = kingdon@weave.works
+	signingkey = A3389E7E48B53488AEF7ABAD470B0A4ACF2A4E23
 [push]
 	default = simple
 [alias]
