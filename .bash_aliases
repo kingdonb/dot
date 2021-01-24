@@ -9,7 +9,7 @@ done
 }
 
 alias be='bundle exec'
-alias k=kubectl
+# alias k=kubectl
 alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
 alias kd='kubectl --namespace=dev'
