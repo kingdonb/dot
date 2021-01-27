@@ -19,6 +19,8 @@ fi
 
 . $HOME/.asdf/completions/asdf.bash
 
-. <(kubectl completion bash)
 . <(flux completion bash)
+. <(gh completion bash)
+
+. <(kubectl completion bash)
 . <(loft completion bash)
