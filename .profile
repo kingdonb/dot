@@ -67,3 +67,4 @@ export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphr
 export EDITOR=vim
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

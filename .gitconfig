@@ -1,7 +1,6 @@
 [user]
-	name = Kingdon Barrett
-	email = kingdon.b@nd.edu
-	signingkey = A82B102508836A5DF35711F52173964BF4EBB4D2
+  name = Kingdon Barrett
+  email = kingdon.b@nd.edu
 [push]
 	default = simple
 [alias]
@@ -13,5 +12,3 @@
 	ff = only
 [gpg]
 	program = gpg
-[init]
-	defaultBranch = kingdonb
