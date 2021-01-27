@@ -21,3 +21,4 @@ fi
 
 . <(kubectl completion bash)
 . <(flux completion bash)
+. <(loft completion bash)
