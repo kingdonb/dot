@@ -8,8 +8,10 @@ if test -f /etc/alpine-release ; then
 	apk add --no-cache git make musl-dev go
 fi
 
+# FIXME: for distro that includes OS packages for go, bootstrap from that
+# (instead of using the outdated go package from homebrew)
 # For base go from homebrew Cellar, on MacOS
-GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+# GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 
 # Configure Go
 if [ ! -z "${GOROOT:-}" ]; then
