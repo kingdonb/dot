@@ -7,6 +7,9 @@ do
 	go $i ./cmd/...
 done
 }
+do-gh-get-authtoken () {
+  ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
+}
 
 alias be='bundle exec'
 # alias k=kubectl
