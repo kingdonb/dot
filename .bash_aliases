@@ -80,6 +80,6 @@ alias hephy="git clone https://github.com/kingdonb/gitops-hephy.git -b kingdonb"
 # alias remem="git config credential.helper store"
 alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"
 alias kingdonb="kubectl config set-context --current --namespace=kingdonb"
-alias ahmetb="go get -d $KUBECTX; pushd $GOPATH/src/$KUBECTX; go-get-binaries; popd"
+alias ahmetb="go get -d $KUBECTX; pushd ~/go/src/$KUBECTX; go-get-binaries; popd"
 alias ghtoken='export GITHUB_TOKEN=`do-gh-get-authtoken`'
 # alias home="hephy; remem; ascp; kubec; apks; get-go.sh; ahmetb"
