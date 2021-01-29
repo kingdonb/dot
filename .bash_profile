@@ -10,6 +10,7 @@ fi
 # export KUBECONFIG="$HOME/.kube/config:$HOME/Downloads/hephynator--gullible-relationship-kubeconfig.yaml"
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/usr/local/etc/bash_completion.d/git-completion.bash" ]] && . "/usr/local/etc/bash_completion.d/git-completion.bash"
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
@@ -20,3 +21,9 @@ fi
 . $HOME/.asdf/completions/asdf.bash
 
 . <(flux completion bash)
+. <(gh completion bash)
+. <(helm completion bash)
+
+. <(jx completion bash)
+. <(kubectl completion bash)
+. <(loft completion bash)
