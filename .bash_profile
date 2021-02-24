@@ -25,5 +25,5 @@ fi
 . <(helm completion bash)
 
 . <(jx completion bash)
-. <(kubectl completion bash)
+source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 . <(loft completion bash)

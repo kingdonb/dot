@@ -22,5 +22,5 @@
 	required = true
 [merge]
 	ff = false
-[init]
-	defaultBranch = main
+#[init]
+#	defaultBranch = main
