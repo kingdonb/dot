@@ -84,4 +84,5 @@ alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"
 alias kingdonb="kubectl config set-context --current --namespace=kingdonb"
 alias ahmetb="go get -d $KUBECTX; pushd ~/go/src/$KUBECTX; go-get-binaries; popd"
 alias ghtoken='export GITHUB_TOKEN=`do-gh-get-authtoken`'
+alias rakkess="kubectl access-matrix"
 # alias home="hephy; remem; ascp; kubec; apks; get-go.sh; ahmetb"
