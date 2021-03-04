@@ -33,6 +33,7 @@
 .kube/config
 .kube/http-cache
 .kube/kubectx
+.kx/
 .ssh
 .ssh/known_hosts
 .viminfo
