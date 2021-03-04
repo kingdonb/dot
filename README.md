@@ -5,7 +5,7 @@ apk add git
 cd
 git init
 git remote add origin https://github.com/kingdonb/dot.git
-git pull origin kingdonb && git co kingdonb
+rm .bashrc && git pull origin alpine-dotfiles && git co alpine-dotfiles
 bash --login
 ```
 
