@@ -14,7 +14,7 @@ if test -f /etc/alpine-release ; then
 fi
 
 # For base go from homebrew Cellar, on MacOS
-GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+# GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 
 # Configure Go
 if [ ! -z "${GOROOT:-}" ]; then
@@ -51,7 +51,7 @@ mkdir -p ${GOPATH}/src ${GOPATH}/bin
 #CMD ["make"]
 # source: https://stackoverflow.com/a/53405005/661659
 
-version=1.15.6
+version=1.15.8
 echo "Installing go $version (with CGO_ENABLED=0)"
 
 set -x

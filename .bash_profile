@@ -1,7 +1,7 @@
-export PATH="/usr/local/opt/go@1.12/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+# export PATH="/usr/local/opt/go@1.12/bin:$PATH"
+# export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 export GOPATH="$HOME/go:$HOME/personal/go"
-export EDITOR="/usr/local/bin/vim"
+export EDITOR="/usr/bin/vim"
 
 if [ -r ~/.bashrc ]; then
    source ~/.bashrc
@@ -16,14 +16,14 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/completions/asdf.bash
 
-. <(flux completion bash)
-. <(gh completion bash)
-. <(helm completion bash)
+# . <(flux completion bash)
+# . <(gh completion bash)
+# . <(helm completion bash)
 
-. <(jx completion bash)
+# . <(jx completion bash)
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
-. <(loft completion bash)
+# . <(loft completion bash)

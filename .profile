@@ -4,6 +4,7 @@ source $HOME/.bash_git
 GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+export TERM=linux
 
 if test -d $HOME/.local/bin; then
   export PATH="$PATH:$HOME/.local/bin"
@@ -17,7 +18,7 @@ if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
 
-GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+# GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 if test -d $HOME/go; then
 	# GOPATH has been set in .bash_profile
 	# export GOPATH=$HOME/go

@@ -62,7 +62,7 @@ alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs
 alias pod-reqs='kubectl get po -o custom-columns="Name:metadata.name,CPU-request:spec.containers[*].resources.requests.cpu"'
 
 if test -f `which apk >/dev/null 2>&1`; then
-  alias apks="apk add vim git-perl git-email fzf gcc g++ build-base"
+  alias apks="apk add vim git-perl git-email fzf gcc g++ build-base less"
   alias ascp="apk add openssh-client"
 fi
 
