@@ -39,8 +39,8 @@ elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
     export PATH=$GOPATH/bin:$PATH
   fi
 fi
-if test -d $HOME/sdk/go1.15.6; then
-  export GOROOT=$HOME/sdk/go1.15.6
+if test -d $HOME/sdk/go1.16.3; then
+  export GOROOT=$HOME/sdk/go1.16.3
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
