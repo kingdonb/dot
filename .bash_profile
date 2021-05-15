@@ -14,16 +14,16 @@ fi
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/completions/asdf.bash
 
 . <(flux completion bash)
 . <(gh completion bash)
 . <(helm completion bash)
 
-. <(jx completion bash)
+# . <(jx completion bash)
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
-. <(loft completion bash)
+# . <(loft completion bash)
