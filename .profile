@@ -17,6 +17,10 @@ if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
 
+if test -d /usr/local/kubebuilder/bin; then
+  export PATH=$PATH:/usr/local/kubebuilder/bin
+fi
+
 GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 if test -d $HOME/go; then
 	# GOPATH has been set in .bash_profile

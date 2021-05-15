@@ -47,5 +47,8 @@ sdk/go1.15.3
 /.oracle_jre_usage
 /.Trash
 
+/.HEH*
+/.ghtoke*
+
 template
 build
