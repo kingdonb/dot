@@ -13,6 +13,10 @@ if test -d $HOME/.arkade/bin/; then
   export PATH=$PATH:$HOME/.arkade/bin/
 fi
 
+if test -d $HOME/.porter; then
+  export PATH=$PATH:~/.porter
+fi
+
 if test -d $HOME/bin; then
   export PATH="$PATH:$HOME/bin"
 fi
