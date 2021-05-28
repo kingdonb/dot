@@ -13,13 +13,13 @@ do-gh-get-authtoken () {
 
 alias be='bundle exec'
 # alias k=kubectl
-alias ka='kubectl --namespace=argocd'
-alias kai='kubectl --namespace=argocd-image-updater'
-alias kd='kubectl --namespace=dev'
-alias kf='kubectl --namespace=fluxcd'
-alias kff='kubectl --namespace=flux-system'
-alias kp='kubectl --namespace=pa'
-alias krc='kubectl --namespace=registry-creds-system'
+alias ka='k --namespace=argocd'
+alias kai='k --namespace=argocd-image-updater'
+alias kd='k --namespace=dev'
+alias kf='k --namespace=fluxcd'
+alias kff='k --namespace=flux-system'
+alias kp='k --namespace=pa'
+alias krc='k --namespace=registry-creds-system'
 alias ce='cd ~/projects/personal/kube/etherpad-draft'
 alias cr='cd ~/projects/personal/mm/sredash'
 alias cob='cd ~/projects/personal/mm/ob-mirror'
@@ -43,24 +43,24 @@ alias cper='cd ~/projects/nd_api/nd-person-api-ws'
 alias cppm='cd ~/projects/personal/micro-swansons'
 alias cpg='cd ~/projects/personal/go'
 alias cww='cd ~/weaveworks/wks-quickstart-firekube'
-alias kg="kubectl get -A"
-alias kj='kubectl --namespace=jenkins'
-alias kb='kubectl --namespace=blog'
-# alias ka='kubectl --namespace=aws-provider-system'
-alias kc='kubectl --namespace=cluster-api-system'
-alias kcm='kubectl --namespace=chart-museum'
-alias ksm='kubectl --namespace=cert-manager'
-alias ko='kubectl --namespace=commitsto'
-alias kob='kubectl --namespace=ob-mirror'
-alias kni='kubectl --namespace=nginx-ingress'
-alias ks='kubectl --namespace=kube-system'
-alias ksb='kubectl --namespace=simplest-commitbee'
-alias kh='kubectl --namespace=hephy'
-alias kw='kubectl --namespace=weavek8sops'
+alias kg="k get -A"
+alias kj='k --namespace=jenkins'
+alias kb='k --namespace=blog'
+# alias ka='k --namespace=aws-provider-system'
+alias kc='k --namespace=cluster-api-system'
+alias kcm='k --namespace=chart-museum'
+alias ksm='k --namespace=cert-manager'
+alias ko='k --namespace=commitsto'
+alias kob='k --namespace=ob-mirror'
+alias kni='k --namespace=nginx-ingress'
+alias ks='k --namespace=kube-system'
+alias ksb='k --namespace=simplest-commitbee'
+alias kh='k --namespace=hephy'
+alias kw='k --namespace=weavek8sops'
 alias qgit='git'
 alias vi=vim
-alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
-alias pod-reqs='kubectl get po -o custom-columns="Name:metadata.name,CPU-request:spec.containers[*].resources.requests.cpu"'
+alias node-util='k get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; k describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+alias pod-reqs='k get po -o custom-columns="Name:metadata.name,CPU-request:spec.containers[*].resources.requests.cpu"'
 
 if test -f `which apk >/dev/null 2>&1`; then
   alias apks="apk add vim git-perl git-email fzf gcc g++ build-base"
@@ -82,8 +82,9 @@ alias gpo='git push origin'
 alias hephy="git clone https://github.com/kingdonb/gitops-hephy.git -b kingdonb"
 # alias remem="git config credential.helper store"
 alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"
-alias kingdonb="kubectl config set-context --current --namespace=kingdonb"
+alias kingdonb="k config set-context --current --namespace=kingdonb"
 alias ahmetb="go get -d $KUBECTX; pushd ~/go/src/$KUBECTX; go-get-binaries; popd"
 alias ghtoken='export GITHUB_TOKEN=`do-gh-get-authtoken`'
-alias rakkess="kubectl access-matrix"
+alias rakkess="k access-matrix"
+alias kubectl='k'
 # alias home="hephy; remem; ascp; kubec; apks; get-go.sh; ahmetb"

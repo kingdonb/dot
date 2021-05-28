@@ -6,6 +6,7 @@
 # else
 # ROOT=/
 # fi
+ROOT=/home/kingdon
 
 set -euo pipefail
 
