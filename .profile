@@ -25,30 +25,30 @@ if test -d /usr/local/kubebuilder/bin; then
   export PATH=$PATH:/usr/local/kubebuilder/bin
 fi
 
-GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
+#GOCELLAR=`ls -1 -d /usr/local/opt/go@*/libexec|sort -r|head -1`
 if test -d $HOME/go; then
 	# GOPATH has been set in .bash_profile
 	# export GOPATH=$HOME/go
-	export GOBIN=$HOME/go/bin
-	export PATH="$PATH:$HOME/go/bin"
-elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
+#	export GOBIN=$HOME/go/bin
+#	export PATH="$PATH:$HOME/go/bin"
+# elif test -d /go || test -d /usr/local/go || test -d $GOCELLAR/; then
   if test -d /go; then
     export GOPATH=/go
   elif test -d /usr/local/go; then
     export GOPATH=/usr/local/go
-  elif test -d $GOCELLAR; then
-    export GOPATH=$GOCELLAR
+#  elif test -d $GOCELLAR; then
+#    export GOPATH=$GOCELLAR
   fi
   if test -d $HOME/go/bin; then
     export GOBIN=$HOME/go/bin
     export PATH="$PATH:$HOME/go/bin"
   fi
-  if test -d $GOPATH/bin; then
+  if test -n "$GOPATH" && test -d $GOPATH/bin; then
     export PATH=$GOPATH/bin:$PATH
   fi
 fi
-if test -d $HOME/sdk/go1.16.3; then
-  export GOROOT=$HOME/sdk/go1.16.3
+if test -d $HOME/sdk/go1.16.4; then
+  export GOROOT=$HOME/sdk/go1.16.4
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
@@ -83,4 +83,7 @@ export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphr
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export FLUX_FORWARD_NAMESPACE=flux
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
