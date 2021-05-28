@@ -39,9 +39,7 @@
 /.anyconnect
 gitops-hephy/
 go/
-sdk/go1.15.1
-sdk/go1.15.2
-sdk/go1.15.3
+sdk/go1.16.4
 /.DS_Store
 /.CFUserTextEncoding
 /.oracle_jre_usage
