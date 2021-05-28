@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-if test -d /Users/kingdon; then
-ROOT=/Users/kingdon
-elif test -d /Users/kingdonb; then
-ROOT=/Users/kingdonb
-else
-ROOT=/
-fi
+# if test -d /Users/kingdon; then
+# ROOT=/Users/kingdon
+# elif test -d /Users/kingdonb; then
+# ROOT=/Users/kingdonb
+# else
+# ROOT=/
+# fi
 
 set -euo pipefail
 
