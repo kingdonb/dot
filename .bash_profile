@@ -27,3 +27,4 @@ source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubect
 # . <(loft completion bash)
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

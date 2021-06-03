@@ -62,6 +62,7 @@ if [ -z "$TARGET_VERSION" ]; then
   else
     TARGET_VERSION=$(echo ${TARGET_VERSION%%-1054+*})
     TARGET_VERSION=$(echo ${TARGET_VERSION%%-gke.*})
+    TARGET_VERSION=$(echo ${TARGET_VERSION%%+k3s*})
     TARGET_VERSION=$(echo ${TARGET_VERSION%%-eks-*} | cut -d'.' -f1-3)
   fi
 fi
