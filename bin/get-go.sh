@@ -3,6 +3,8 @@ if test -d /Users/kingdon; then
 ROOT=/Users/kingdon
 elif test -d /Users/kingdonb; then
 ROOT=/Users/kingdonb
+elif test -d /home/kingdon; then
+ROOT=/home/kingdon
 else
 ROOT=/
 fi

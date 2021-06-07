@@ -1,6 +1,6 @@
 #export PATH="/usr/local/opt/go@1.12/bin:$PATH"
 #export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
-export GOPATH="$HOME/go:$HOME/personal/go"
+export GOPATH="$HOME/go" # :$HOME/personal/go"
 export EDITOR="/usr/bin/vim"
 
 if [ -r ~/.bashrc ]; then
