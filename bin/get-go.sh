@@ -5,6 +5,8 @@ elif test -d /Users/kingdonb; then
 ROOT=/Users/kingdonb
 elif test -d /home/kingdon; then
 ROOT=/home/kingdon
+elif test -d /home/yebyen; then
+ROOT=/home/yebyen
 else
 ROOT=/
 fi
