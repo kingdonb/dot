@@ -47,8 +47,8 @@ if test -d $HOME/go; then
     export PATH=$GOPATH/bin:$PATH
   fi
 fi
-if test -d $HOME/sdk/go1.16.4; then
-  export GOROOT=$HOME/sdk/go1.16.4
+if test -d $HOME/sdk/go1.16.5; then
+  export GOROOT=$HOME/sdk/go1.16.5
   if test -d $GOROOT/bin; then
     export PATH=$GOROOT/bin:$PATH
   fi
