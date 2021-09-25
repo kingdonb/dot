@@ -13,9 +13,8 @@ if test -d $HOME/.local/bin; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if test -d $HOME/.arkade/bin/; then
+  export PATH=$PATH:$HOME/.arkade/bin/
 fi
 
 # set PATH so it includes user's private bin if it exists
@@ -23,8 +22,31 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+if test -d $HOME/bin; then
+  export PATH="$PATH:$HOME/bin"
+fi
+
+if test -d /usr/local/kubebuilder/bin; then
+  export PATH=$PATH:/usr/local/kubebuilder/bin
+fi
+
+
+if test -d $HOME/go; then
+	# GOPATH has been set in .bash_profile
+  if test -d $HOME/go/bin; then
+  # export GOBIN=$HOME/go/bin
+    export PATH="$PATH:$HOME/go/bin"
+  fi
+# if test -n "$GOPATH" && test -d $GOPATH/bin; then
+#   export PATH=$GOPATH/bin:$PATH
+# fi
+fi
+
+
+# Add RVM to PATH for scripting
+# if test -d "$HOME/.rvm/bin"; then
+#   export PATH="$PATH:$HOME/.rvm/bin"
+# fi
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

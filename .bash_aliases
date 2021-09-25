@@ -60,7 +60,7 @@ alias gpo='git push origin'
 
 #alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"
 alias kingdonb="kubectl config set-context --current --namespace=kingdonb"
-# ~/go/pkg/mod/github.com/ahmetb/kubectx@v0.9.3
+# ~/go/pkg/mod/github.com/ahmetb/kubectx@v0.9.4
 alias ahmetb="go get -d $KUBECTX; pushd ~/go/pkg/mod/$KUBECTX@v0.9.4; go-get-binaries; popd"
 alias ghtoken='export GITHUB_TOKEN=`do-gh-get-authtoken`'
 alias rakkess="kubectl access-matrix"

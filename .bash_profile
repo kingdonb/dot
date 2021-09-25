@@ -9,6 +9,9 @@ fi
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
+. <(flux completion bash)
+. <(helm completion bash)
+
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
