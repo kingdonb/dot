@@ -1,4 +1,4 @@
-Kingdon's dotfiles
+Kingdon's dotfiles - Ubuntu VM edition
 
 ```
 apk add git
