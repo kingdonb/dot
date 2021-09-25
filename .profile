@@ -30,9 +30,7 @@ if test -d /usr/local/kubebuilder/bin; then
   export PATH=$PATH:/usr/local/kubebuilder/bin
 fi
 
-
 if test -d $HOME/go; then
-	# GOPATH has been set in .bash_profile
   if test -d $HOME/go/bin; then
   # export GOBIN=$HOME/go/bin
     export PATH="$PATH:$HOME/go/bin"
