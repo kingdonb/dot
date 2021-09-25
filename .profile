@@ -17,6 +17,14 @@ if test -d $HOME/.arkade/bin/; then
   export PATH=$PATH:$HOME/.arkade/bin/
 fi
 
+if test -d $HOME/.porter; then
+  export PATH=$PATH:~/.porter
+fi
+
+if test -d $HOME/.linkerd2/bin; then
+  export PATH=$PATH:~/.linkerd2/bin
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
@@ -46,6 +54,7 @@ fi
 #   export PATH="$PATH:$HOME/.rvm/bin"
 # fi
 
+export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphrase
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
