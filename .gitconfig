@@ -1,7 +1,7 @@
 [user]
 	name = Kingdon Barrett
 	email = kingdon@weave.works
-	signingkey = A3389E7E48B53488AEF7ABAD470B0A4ACF2A4E23
+#	signingkey = A3389E7E48B53488AEF7ABAD470B0A4ACF2A4E23
 #	email = kingdon@teamhephy.com
 #	signingkey = E16FBD7754D24B405D374A286AA04E0D72F42F47
 [push]
@@ -15,11 +15,11 @@
 	ff = only
 [gpg]
 	program = gpg
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+#[filter "lfs"]
+#	clean = git-lfs clean -- %f
+#	smudge = git-lfs smudge -- %f
+#	process = git-lfs filter-process
+#	required = true
 [merge]
 	ff = false
 #[init]
