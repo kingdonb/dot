@@ -1,0 +1,25 @@
+IMAGE=ubuntu-20.04.2-desktop-amd64.qcow2
+
+qemu-system-x86_64 \
+-M q35,accel=hvf \
+-chardev qemu-vdagent,id=ch1,name=vdagent,clipboard=on \
+  -device virtio-serial-pci \
+  -device virtserialport,chardev=ch1,id=ch1,name=com.redhat.spice.0 \
+  -device intel-hda -device hda-output \
+  -device qemu-xhci \
+  -device virtio-vga-gl \
+  -device virtio-net-pci,netdev=net \
+  -device virtio-mouse-pci \
+  -device usb-kbd \
+  -device usb-tablet \
+-cpu host \
+-hda ${IMAGE} \
+-display cocoa,gl=es  \
+-netdev user,id=net,ipv6=off \
+-m 4G \
+-no-user-config \
+-nodefaults \
+-overcommit cpu-pm=off \
+-overcommit mem-lock=off \
+-rtc base=utc,clock=host \
+-smp 2
