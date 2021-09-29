@@ -15,7 +15,7 @@ alias be='bundle exec'
 # alias k=kubectl
 alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
-alias kd='kubectl --namespace=dev'
+alias kd='kubectl --namespace=deis'
 alias kf='kubectl --namespace=fluxcd'
 alias kff='kubectl --namespace=flux-system'
 alias krc='kubectl --namespace=registry-creds-system'
@@ -40,6 +40,7 @@ alias qgit='git'
 alias vi=vim
 alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
 alias pod-reqs='kubectl get po -o custom-columns="Name:metadata.name,CPU-request:spec.containers[*].resources.requests.cpu"'
+alias hogs='k top po -A --use-protocol-buffers|sort -k4 -h'
 
 if test -f `which apk >/dev/null 2>&1`; then
   alias apks="apk add vim git-perl git-email fzf gcc g++ build-base"
