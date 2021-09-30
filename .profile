@@ -1,9 +1,6 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+# source $HOME/.bash_aliases
 
+# echo 'loading .profile'
 source $HOME/.bash_git
 GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -48,10 +45,11 @@ fi
 #   export PATH="$PATH:$HOME/.rvm/bin"
 # fi
 
+export FLUX_FORWARD_NAMESPACE=flux
 export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphrase
 export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
