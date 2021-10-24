@@ -12,7 +12,7 @@ export EDITOR="/usr/bin/vim"
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PS1="\$(kube_ps1) $PS1"
+PS1="\$(kube_ps1)$PS1"
 
 if [ -r ~/.bashrc ]; then
    source ~/.bashrc
