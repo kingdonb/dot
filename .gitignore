@@ -52,3 +52,10 @@ sdk/go1.15.3
 
 template
 build
+
+.azure/
+.docker/
+.kx/
+.zprofile
+.zsh_history
+MPLUS_FONTS/

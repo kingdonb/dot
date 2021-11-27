@@ -5,13 +5,14 @@ export EDITOR="/usr/bin/vim"
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 . <(flux completion bash)
 #. <(gh completion bash)
 . <(helm completion bash)
 
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1="\$(kube_ps1)$PS1"
 
 if [ -r ~/.bashrc ]; then
