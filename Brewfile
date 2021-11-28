@@ -1,0 +1,18 @@
+brew "azure-cli"
+brew "bash"
+brew "bash-completion"
+brew "gnu-sed"
+brew "go"
+brew "ruby"
+brew "gnupg"
+
+brew "flux"
+brew "fzf"
+brew "helm"
+brew "jq"
+brew "kube-ps1"
+brew "kubernetes-cli"
+brew "sops"
+
+cask "docker"
+cask "google-cloud-sdk"
