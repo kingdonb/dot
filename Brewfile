@@ -5,6 +5,7 @@ brew "gnu-sed"
 brew "go"
 brew "ruby"
 brew "gnupg"
+brew "git"
 
 brew "flux"
 brew "fzf"
