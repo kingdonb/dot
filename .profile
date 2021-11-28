@@ -30,6 +30,13 @@ if test -d /usr/local/kubebuilder/bin; then
   export PATH=$PATH:/usr/local/kubebuilder/bin
 fi
 
+if test -d $HOME/sdk/go; then
+  export GOROOT=$HOME/sdk/go
+  if test -d $HOME/sdk/go/bin; then
+    export PATH="$PATH:$HOME/sdk/go/bin"
+  fi
+fi
+
 if test -d $HOME/go; then
   if test -d $HOME/go/bin; then
   # export GOBIN=$HOME/go/bin
