@@ -13,7 +13,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
-PS1="\$(kube_ps1)$PS1"
+PS1="\n\$(kube_ps1)$PS1"
 
 if [ -r ~/.bashrc ]; then
    source ~/.bashrc
