@@ -57,6 +57,8 @@ rdr pass inet proto tcp from any to any port 22 -> 127.0.0.1 port 2222
 alias ls='ls -p'
 # alias sj='ssh kbarret8@jenkins.oit.nd.edu'
 # alias jbak='rsync -aiy --delete --progress kbarret8@jenkins.oit.nd.edu:/data/jenkins/backup/*.zip ~/jenkins/history/jenkins-backups'
+alias rfluxcred='for i in 11-certificates 31-openvpn 32-keycloak \
+33-kube-oidc-proxy 91-harbor; do flux resume ks $i; done'
 
 alias gtd='git tag -d'
 alias gpo='git push origin'
