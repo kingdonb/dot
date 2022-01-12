@@ -36,6 +36,8 @@ alias ks='kubectl --namespace=kube-system'
 alias ksb='kubectl --namespace=simplest-commitbee'
 alias kh='kubectl --namespace=hephy'
 alias kw='kubectl --namespace=weavek8sops'
+alias moo='ssh moo'
+alias msi='ssh msi'
 alias qgit='git'
 alias vi=vim
 alias node-util='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
@@ -58,7 +60,7 @@ alias ls='ls -p'
 # alias sj='ssh kbarret8@jenkins.oit.nd.edu'
 # alias jbak='rsync -aiy --delete --progress kbarret8@jenkins.oit.nd.edu:/data/jenkins/backup/*.zip ~/jenkins/history/jenkins-backups'
 alias rfluxcred='for i in 11-certificates 31-openvpn 32-keycloak \
-33-kube-oidc-proxy 91-harbor; do flux resume ks $i; done'
+33-kube-oidc-proxy 91-harbor 93-scrob-prod; do flux resume ks $i& done'
 
 alias gtd='git tag -d'
 alias gpo='git push origin'
