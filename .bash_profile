@@ -5,12 +5,12 @@ export EDITOR="/usr/bin/vim"
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 . <(flux completion bash)
 #. <(gh completion bash)
 . <(helm completion bash)
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# linuxbrew before kubectl
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
 source "/home/linuxbrew/.linuxbrew/opt/kube-ps1/share/kube-ps1.sh"

@@ -10,6 +10,9 @@ done
 do-gh-get-authtoken () {
   ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
 }
+brew-install () {
+  brew install --build-from-source $(brew deps --include-build $1) $1
+}
 
 alias be='bundle exec'
 # alias k=kubectl
