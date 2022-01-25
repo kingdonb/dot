@@ -9,9 +9,11 @@ export EDITOR="/usr/bin/vim"
 #. <(gh completion bash)
 . <(helm completion bash)
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# linuxbrew before kubectl
 source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "/home/linuxbrew/.linuxbrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1="\$(kube_ps1)$PS1"
 
 if [ -r ~/.bashrc ]; then

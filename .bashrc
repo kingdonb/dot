@@ -103,15 +103,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#DISTRO=centos7
-#BACKEND=docker
-GITHUB_USER=kingdonb
-#GITHUB_TOKEN=$(cat $HOME/.github-token-flux2-bootstrap)
-#DO_API_KEY=$(cat $HOME/.digitalocean-token-diversek8s-kingdon-macbook)
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rvm/bin:$PATH:$GOPATH/bin:$HOME/bin"
-# echo Hello World
-# export DOCKER_HOST=moo.nerdland.local
-
-# . "/Users/kingdonb/.acme.sh/acme.sh.env"
+##DISTRO=centos7
+##BACKEND=docker
+#GITHUB_USER=kingdonb
+##GITHUB_TOKEN=$(cat $HOME/.github-token-flux2-bootstrap)
+##DO_API_KEY=$(cat $HOME/.digitalocean-token-diversek8s-kingdon-macbook)
+#
+## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$HOME/.rvm/bin:$PATH:$GOPATH/bin:$HOME/bin"
+## echo Hello World
+## export DOCKER_HOST=moo.nerdland.local
+#
+## . "/Users/kingdonb/.acme.sh/acme.sh.env"
