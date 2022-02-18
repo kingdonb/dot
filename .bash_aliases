@@ -11,6 +11,10 @@ do-gh-get-authtoken () {
   ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
 }
 
+alias rcon='git rebase --continue'
+alias dcac='git diff --cached'
+alias gd='git diff'
+
 alias be='bundle exec'
 # alias k=kubectl
 alias ka='kubectl --namespace=argocd'
@@ -61,6 +65,8 @@ alias ls='ls -p'
 # alias jbak='rsync -aiy --delete --progress kbarret8@jenkins.oit.nd.edu:/data/jenkins/backup/*.zip ~/jenkins/history/jenkins-backups'
 alias rfluxcred='for i in 11-certificates 31-openvpn 32-keycloak \
 33-kube-oidc-proxy 91-harbor 93-scrob-prod; do flux resume ks $i& done'
+alias pfluxcred='for i in 31-openvpn 32-keycloak 33-kube-oidc-proxy \
+91-harbor 93-scrob-prod; do flux resume ks $i& done'
 
 alias gtd='git tag -d'
 alias gpo='git push origin'
