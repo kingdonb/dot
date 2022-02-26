@@ -4,12 +4,8 @@ if [ -r ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-[[ -r "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]] && . "/opt/homebrew/etc/bash_completion.d/git-completion.bash"
-
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 . <(flux completion bash)
 #. <(gh completion bash)
 . <(helm completion bash)

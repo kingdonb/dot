@@ -6,6 +6,14 @@ GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1=':\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
+# echo $PATH
+# echo 'adding homebrew'
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# echo $PATH
+
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+[[ -r "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]] && . "/opt/homebrew/etc/bash_completion.d/git-completion.bash"
+
 if test -d $HOME/.local/bin; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
@@ -23,21 +31,21 @@ if test -d $HOME/.linkerd2/bin; then
 fi
 
 if test -d $HOME/bin; then
-  export PATH="$PATH:$HOME/bin"
-fi
-
-if test -d /usr/local/kubebuilder/bin; then
-  export PATH=$PATH:/usr/local/kubebuilder/bin
+  export PATH="$HOME/bin:$PATH"
 fi
 
 if test -d $HOME/go; then
   if test -d $HOME/go/bin; then
   # export GOBIN=$HOME/go/bin
-    export PATH="$PATH:$HOME/go/bin"
+    export PATH="$HOME/go/bin:$PATH"
   fi
 # if test -n "$GOPATH" && test -d $GOPATH/bin; then
 #   export PATH=$GOPATH/bin:$PATH
 # fi
+fi
+
+if test -d /usr/local/kubebuilder/bin; then
+  export PATH=$PATH:/usr/local/kubebuilder/bin
 fi
 
 # Add RVM to PATH for scripting
