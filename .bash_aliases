@@ -14,6 +14,7 @@ do-gh-get-authtoken () {
 
 alias rcon='git rebase --continue'
 alias dcac='git diff --cached'
+alias gc='git commit -v -s -S'
 alias gd='git diff'
 
 alias be='bundle exec'
