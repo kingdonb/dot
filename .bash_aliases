@@ -8,7 +8,8 @@ do
 done
 }
 do-gh-get-authtoken () {
-  ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
+#  ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
+  ~/go/bin/yq '."github.com".oauth_token' ~/.config/gh/hosts.yml
 }
 
 alias rcon='git rebase --continue'
@@ -16,12 +17,16 @@ alias dcac='git diff --cached'
 alias gd='git diff'
 
 alias be='bundle exec'
-# alias k=kubectl
+alias k=kubectl
+complete -F __start_kubectl k
 alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
 alias kd='kubectl --namespace=deis'
 alias kf='kubectl --namespace=fluxcd'
 alias kff='kubectl --namespace=flux-system'
+alias fa='flux get ks -A|egrep -v ^flux-system'
+alias faa='flux get ks -A'
+alias fak='flux get ks'
 alias krc='kubectl --namespace=registry-creds-system'
 alias cpk='cd ~/projects/personal/kube'
 alias cpg='cd ~/projects/personal/go'

@@ -10,7 +10,8 @@ fi
 #. <(gh completion bash)
 . <(helm completion bash)
 
-source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
+#source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
+#complete -F __start_kubectl k
 
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1="\n\$(kube_ps1)$PS1"
