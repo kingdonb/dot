@@ -107,7 +107,10 @@ fi
 
 #DISTRO=centos7
 #BACKEND=docker
-GITHUB_USER=kingdonb
+
+#GITHUB_USER=kingdonb
+GITHUB_USER=yebyen
+
 #GITHUB_TOKEN=$(cat $HOME/.github-token-flux2-bootstrap)
 #DO_API_KEY=$(cat $HOME/.digitalocean-token-diversek8s-kingdon-macbook)
 
