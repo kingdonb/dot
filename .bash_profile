@@ -22,3 +22,4 @@ PS1="\n\$(kube_ps1)$PS1"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # rvm use > /dev/null 2>&1
+. "$HOME/.cargo/env"
