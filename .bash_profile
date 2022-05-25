@@ -9,6 +9,7 @@ fi
 . <(flux completion bash)
 #. <(gh completion bash)
 . <(helm completion bash)
+. <(kp completion bash)
 
 #source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
 #complete -F __start_kubectl k
