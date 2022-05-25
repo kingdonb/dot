@@ -8,19 +8,37 @@ do
 done
 }
 do-gh-get-authtoken () {
-  ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
+#  ~/go/bin/yq r ~/.config/gh/hosts.yml '"github.com".oauth_token'
+  ~/go/bin/yq '."github.com".oauth_token' ~/.config/gh/hosts.yml
 }
 brew-install () {
   brew install --build-from-source $(brew deps --include-build $1) $1
 }
 
+alias grc='git rebase --continue'
+#alias dcac='git diff --cached'
+alias ga='git add'
+alias gap='git add -p'
+alias gc='git commit -v -s' # -S'
+alias gcm='git commit -v -s -m' # -S'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git l'
+
+alias fr='flux reconcile ks flux-system --with-source'
+alias nuki='kubectl config delete-user kind-kind; kubectl config delete-cluster kind-kind; kubectl config delete-context kind-kind'
+
 alias be='bundle exec'
 # alias k=kubectl
+complete -F __start_kubectl k
 alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
 alias kd='kubectl --namespace=deis'
 alias kf='kubectl --namespace=fluxcd'
 alias kff='kubectl --namespace=flux-system'
+alias fa='flux get ks -A|egrep -v ^flux-system'
+alias faa='flux get ks -A'
+alias fak='flux get ks'
 alias krc='kubectl --namespace=registry-creds-system'
 alias cpk='cd ~/projects/personal/kube'
 alias cpg='cd ~/projects/personal/go'
