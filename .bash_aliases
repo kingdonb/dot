@@ -25,13 +25,22 @@ alias gl='git l'
 alias fr='flux reconcile ks flux-system --with-source'
 alias nuki='kubectl config delete-user kind-kind; kubectl config delete-cluster kind-kind; kubectl config delete-context kind-kind'
 
+function checkon-kured() {
+  for i in `kubectl -n kube-system get po --selector app.kubernetes.io/instance=kured -oname`; do
+    kubectl -n kube-system exec -it $i -- sh -c \
+      "nsenter -m/proc/1/ns/mnt -- sh -c 'echo -n \`cat /etc/hostname\`:\  && ls -l /var/run/reboot-required'"
+  done
+}
+
+alias kured=checkon-kured
+
 alias be='bundle exec'
 alias k=kubectl
 complete -F __start_kubectl k
 alias ka='kubectl --namespace=argocd'
 alias kai='kubectl --namespace=argocd-image-updater'
 alias kd='kubectl --namespace=deis'
-alias kf='kubectl --namespace=fluxcd'
+alias kf='kubectl --namespace=flux'
 alias kff='kubectl --namespace=flux-system'
 alias fa='flux get ks -A|egrep -v ^flux-system'
 alias faa='flux get ks -A'

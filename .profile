@@ -57,6 +57,8 @@ export FLUX_FORWARD_NAMESPACE=flux
 export GPG_TTY=$(tty) # if GPG signatures are needed, use TTY to ask for passphrase
 export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 

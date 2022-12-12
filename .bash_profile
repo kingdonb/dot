@@ -1,4 +1,5 @@
 export EDITOR="/usr/bin/vim"
+ulimit -n 10240
 
 if [ -r ~/.bashrc ]; then
    source ~/.bashrc
@@ -9,10 +10,16 @@ fi
 . <(flux completion bash)
 #. <(gh completion bash)
 . <(helm completion bash)
-. <(kp completion bash)
+#. <(kp completion bash)
 
-#source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
-#complete -F __start_kubectl k
+source <(kubectl completion bash | sed 's|__start_kubectl kubectl|__start_kubectl k|g')
+complete -F __start_kubectl k
+
+function kgetall {
+  kubectl api-resources --verbs=list --namespaced -o name | xargs -n1 kubectl get --show-kind --ignore-not-found "$@"
+}
+# complete -F __start_kubectl kgetall
+# https://stackoverflow.com/a/53016918/661659
 
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1="\n\$(kube_ps1)$PS1"
