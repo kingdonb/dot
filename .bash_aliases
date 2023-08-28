@@ -12,18 +12,23 @@ do-gh-get-authtoken () {
   ~/go/bin/yq '."github.com".oauth_token' ~/.config/gh/hosts.yml
 }
 
+alias whatswrong='kubectl get po -A|grep -v "3/3     Running"|grep -v "2/2     Running"|grep -v "1/1     Running"|grep -v "0/1     Completed"'
+alias lwhatswrong="watch 'kubectl get po -A|grep -v \"3/3     Running\"|grep -v \"2/2     Running\"|grep -v \"1/1     Running\"|grep -v \"0/1     Completed\"'"
 alias grc='git rebase --continue'
 #alias dcac='git diff --cached'
 alias ga='git add'
 alias gap='git add -p'
 alias gc='git commit -v -s -S'
 alias gcm='git commit -v -s -S -m'
+alias gmf='git merge --ff-only'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git l'
 
 alias fr='flux reconcile ks flux-system --with-source'
 alias nuki='kubectl config delete-user kind-kind; kubectl config delete-cluster kind-kind; kubectl config delete-context kind-kind'
+
+alias supertldr='pushd ~/projects/weaveworks/kubeconfig-ca-fetch && make clean && make supertldr && popd'
 
 function checkon-kured() {
   for i in `kubectl -n kube-system get po --selector app.kubernetes.io/instance=kured -oname`; do
@@ -56,7 +61,7 @@ alias kb='kubectl --namespace=blog'
 alias kc='kubectl --namespace=cluster-api-system'
 alias kcm='kubectl --namespace=chart-museum'
 alias ksm='kubectl --namespace=cert-manager'
-alias ko='kubectl --namespace=commitsto'
+#alias ko='kubectl --namespace=commitsto'
 alias kob='kubectl --namespace=ob-mirror'
 alias kni='kubectl --namespace=ingress-nginx'
 alias ks='kubectl --namespace=kube-system'
@@ -93,11 +98,12 @@ alias pfluxcred='for i in 31-openvpn 32-keycloak 33-kube-oidc-proxy \
 
 alias gtd='git tag -d'
 alias gpo='git push origin'
+alias gp='git push'
 
 #alias kubec="mkdir ~/.kube; scp yebyen@nerdland.info:kubeconfig~ ~/.kube/config"
 alias kingdonb="kubectl config set-context --current --namespace=kingdonb"
 # ~/go/pkg/mod/github.com/ahmetb/kubectx@v0.9.4
-alias ahmetb="go get -d $KUBECTX; pushd ~/go/pkg/mod/$KUBECTX@v0.9.4; go-get-binaries; popd"
+alias ahmetb="go install $KUBECTX@v0.9.4; pushd ~/go/pkg/mod/$KUBECTX@v0.9.4; go-get-binaries; popd"
 alias ghtoken='export GITHUB_TOKEN=`do-gh-get-authtoken`'
 alias rakkess="kubectl access-matrix"
 # alias home="get-go.sh; ahmetb"
