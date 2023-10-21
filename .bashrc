@@ -114,16 +114,31 @@ GITHUB_USER=yebyen
 #GITHUB_TOKEN=$(cat $HOME/.github-token-flux2-bootstrap)
 #DO_API_KEY=$(cat $HOME/.digitalocean-token-diversek8s-kingdon-macbook)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rvm/bin:$PATH:$GOPATH/bin:$HOME/bin"
-# echo Hello World
-# export DOCKER_HOST=moo.nerdland.local
-
 # . "/Users/kingdonb/.acme.sh/acme.sh.env"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$HOME/.rvm/bin:$PATH:$GOPATH/bin:$HOME/bin"
+# echo Hello World
+# export DOCKER_HOST=moo.nerdland.local
+
+
+
+# Wasmer
+export WASMER_DIR="/Users/kingdonb/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# pnpm
+export PNPM_HOME="/Users/kingdonb/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

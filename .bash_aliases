@@ -12,6 +12,7 @@ do-gh-get-authtoken () {
   ~/go/bin/yq '."github.com".oauth_token' ~/.config/gh/hosts.yml
 }
 
+alias comma='ssh comma@comma-b60292b317aded5c'
 alias whatswrong='kubectl get po -A|grep -v "3/3     Running"|grep -v "2/2     Running"|grep -v "1/1     Running"|grep -v "0/1     Completed"'
 alias lwhatswrong="watch 'kubectl get po -A|grep -v \"3/3     Running\"|grep -v \"2/2     Running\"|grep -v \"1/1     Running\"|grep -v \"0/1     Completed\"'"
 alias grc='git rebase --continue'
